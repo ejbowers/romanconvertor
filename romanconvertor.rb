@@ -31,14 +31,14 @@ def fromRoman(romanNumber)
 		end
 		bValue = value
 	end
-	raise NotImplementedError
+	return total
 end
 
 def toRoman(arabicNumber)
 	value = ""
 	num = arabicNumber
-	if arabicNumber > 3999
-		raise RangeError.new("Max Value of 3999 ONLY!")
+	if arabicNumber > 3999 or arabicNumber < 1
+		raise RangeError.new("Values must be between 1 and 3999!")
 	else
 	while num > 0
 		if num % 1000 > 0
@@ -84,5 +84,5 @@ def toRoman(arabicNumber)
 		end
 	end
 	end
-	raise NotImplementedError
+	return value
 end
