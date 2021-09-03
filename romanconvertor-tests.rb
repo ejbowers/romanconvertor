@@ -21,20 +21,20 @@ class TestRomanConvertor < Test::Unit::TestCase
         500 => "D",
         1000 => "M"
     }
-
+    #HERE
     def test_toRoman_repeatingSingleDigit
         assert_equal("I", toRoman(1))
         assert_equal("III", toRoman(3))
     end
-
+    #HERE
     def test_toRoman_randomSuccessfulValues
         @@randomValues.each{ |key, value| assert_equal(value, toRoman(key)) }
     end
-
+    #HERE
     def test_fromRoman_randomSuccessfulValues
         @@randomValues.each{ |key, value| assert_equal(key, fromRoman(value)) }
     end
-
+    #HERE
     def test_toRoman_specialValues
         @@specialValues.each{ |key, value| assert_equal(value, toRoman(key)) }
     end
@@ -42,7 +42,7 @@ class TestRomanConvertor < Test::Unit::TestCase
     def test_fromRoman_specialValues
         @@specialValues.each{ |key, value| assert_equal(key, fromRoman(value)) }
     end
-
+    #FAILED
     def test_sanity
         original = "MCDXCVIII"
         convertedArabic = fromRoman(original)
@@ -61,7 +61,7 @@ class TestRomanConvertor < Test::Unit::TestCase
             toRoman(0)
         end
     end
-
+    #HERE
     def test_number4000
         assert_raise RangeError do
             toRoman(4000)
@@ -85,5 +85,6 @@ class TestRomanConvertor < Test::Unit::TestCase
             fromRoman("ii")
         end
     end
+
    
 end
